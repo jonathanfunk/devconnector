@@ -24,6 +24,13 @@ module.exports = function validateProfileInput(data) {
     errors.skills = 'Skills field is required';
   }
 
+  if (
+    data.website.indexOf('http://') !== 0 &&
+    data.website.indexOf('https://') !== 0
+  ) {
+    errors.website = 'Make sure this is a valid http(s) address';
+  }
+
   if (!isEmpty(data.website)) {
     if (!Validator.isURL(data.website)) {
       errors.website = 'Not a valid URL';
