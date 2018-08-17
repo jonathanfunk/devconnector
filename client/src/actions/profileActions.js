@@ -45,7 +45,7 @@ export const getProfileByHandle = handle => dispatch => {
       })
     );
 };
-getProfileByHandle;
+
 //Create Profile
 export const createProfile = (profileData, history) => dispatch => {
   axios
