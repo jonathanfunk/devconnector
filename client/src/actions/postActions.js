@@ -4,6 +4,7 @@ import {
   GET_ERRORS,
   CLEAR_ERRORS,
   GET_POSTS,
+  LIKE_POST,
   GET_POST,
   POST_LOADING,
   DELETE_POST
@@ -88,26 +89,36 @@ export const deletePost = id => dispatch => {
 export const addLike = id => dispatch => {
   axios
     .post(`/api/posts/like/${id}`)
-    .then(res => dispatch(getPosts()))
-    .catch(err =>
+    .then(({ data }) => {
+      dispatch({
+        type: LIKE_POST,
+        payload: data //pass in updated post
+      });
+    })
+    .catch(({ response }) => {
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: response.data
+      });
+    });
 };
 
 //Remove Like
 export const removeLike = id => dispatch => {
   axios
     .post(`/api/posts/unlike/${id}`)
-    .then(res => dispatch(getPosts()))
-    .catch(err =>
+    .then(({ data }) => {
+      dispatch({
+        type: LIKE_POST,
+        payload: data //pass in updated post
+      });
+    })
+    .catch(({ response }) => {
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: response.data
+      });
+    });
 };
 
 //Add Comment

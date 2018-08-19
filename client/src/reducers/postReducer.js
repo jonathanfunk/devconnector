@@ -1,6 +1,7 @@
 import {
   ADD_POST,
   GET_POSTS,
+  LIKE_POST,
   GET_POST,
   POST_LOADING,
   DELETE_POST
@@ -24,6 +25,20 @@ export default function(state = initialState, action) {
         ...state,
         posts: action.payload,
         loading: false
+      };
+    case LIKE_POST:
+      return {
+        ...state,
+        posts: state.posts.map(post => {
+          if (post._id === action.payload._id) {
+            return {
+              ...post,
+              ...action.payload
+            };
+          } else {
+            return post;
+          }
+        })
       };
     case GET_POST:
       return {
