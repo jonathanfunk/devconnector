@@ -21,8 +21,12 @@ class Register extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
+    }
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
     }
   }
 
@@ -41,7 +45,8 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    this.props.registerUser(newUser, this.props.history);
+    this.props.registerUser(newUser);
+    //this.props.registerUser(newUser, this.props.history);
   };
 
   render() {
@@ -84,7 +89,7 @@ class Register extends Component {
                 <TextFieldGroup
                   placeholder="Confirm Password"
                   name="password2"
-                  type="password2"
+                  type="password"
                   value={this.state.password2}
                   onChange={this.onChange}
                   error={errors.password2}
