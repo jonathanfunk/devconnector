@@ -20,7 +20,7 @@ This is a developer social network developed using MERN Stack(MongoDb, Express, 
 * Git/Github
 
 ## Learning Experience
-This is a [Udemy Course by Brad Traversey](https://www.udemy.com/mern-stack-front-to-back/). Prior to taking this course, I had several painpoints learning the MERN Stack such as error handing & JWT Authentication. This course covered my pain points & so much more. I've used tools & librariries I never worked with before such as Axios, Concurrently & Bootstrap. Near the end of the course, there were opportunities for improvements:
+This is a [Udemy Course by Brad Traversy](https://www.udemy.com/mern-stack-front-to-back/). Prior to taking this course, I had several painpoints learning the MERN Stack such as error handing & JWT Authentication. This course covered my pain points & so much more. I've used tools & librariries I never worked with before such as Axios, Concurrently & Bootstrap. Near the end of the course, there were opportunities for improvements:
 * Used class properties instead of constructors & super()
 * Login users as soon as they register & redirect them to the dashboard page as opposed to redirecting registered users to the login page
 * Used flex to sticky the footer to the bottom of the screen on pages where content is minimal
