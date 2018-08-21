@@ -25,4 +25,5 @@ This is a [Udemy Course by Brad Traversy](https://www.udemy.com/mern-stack-front
 * Login users as soon as they register & redirect them to the dashboard page as opposed to redirecting registered users to the login page
 * Used flex to sticky the footer to the bottom of the screen on pages where content is minimal
 * The posts list no longer reloads everytime a user likes a post
+
 After taking this course, I have a much better understanding how a MERN application works. Stay tuned to see what I'm going to do next!
